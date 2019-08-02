@@ -1,3 +1,4 @@
+
 let friendsArr = [
     {
         "name": "Joe F.",
@@ -27,3 +28,41 @@ let friendsArr = [
 ];
 
 module.exports = friendsArr;
+
+
+
+// ===== COMPATABILITY LOGIC =====
+
+const userTest = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function compare(userAnswers, friendAnswers) {
+    // create new array of differences between user answers and friend answers
+    let newArr = [];
+    for (let i = 0; i <= 9; i++) {
+        const result = Math.abs(userAnswers[i] - friendAnswers[i])
+        newArr.push(result)
+    };
+    console.log(newArr)
+
+    // get sum of differences of answers
+    const difference = newArr.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue
+    });
+    console.log(difference);
+};
+
+// compare(userTest, friendsArr[0].scores)
+
+function getDiffs () {
+    // create new array of differences of answers for testing
+    let diffsArr = [];
+    for (let j = 0; j <= friendsArr.length; j++) {
+        // replace userTest with user-supplied answers from survey
+        diffsArr.push(compare(userTest, friendsArr[j].scores));
+    };
+    console.log(diffsArr);
+};
+
+// getDiffs()
+
+console.log(Math.abs("6"))
