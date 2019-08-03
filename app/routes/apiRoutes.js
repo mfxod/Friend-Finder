@@ -10,6 +10,7 @@ module.exports = function (app) {
 
     app.post("/api/friends", function (req, res) {
         
+        // ===== COMPATABILITY LOGIC =====
         function compare(userAnswers, friendAnswers) {
             // create new array of differences between user answers and friend answers
             let newArr = [];
@@ -37,11 +38,11 @@ module.exports = function (app) {
             return diffsArr
         };
         
-        // find smallest value in diffsArr and use its index to display friend match
+        // index of the smallest value in the diffsArr (the most compatible friend)
         const matchIndex = getDiffs().indexOf(Math.min(...getDiffs()));
         // console.log("matchIndex: " + matchIndex);
         
-        
+        // how do I create a modal?
         
         // friends.push(req.body)
     })
