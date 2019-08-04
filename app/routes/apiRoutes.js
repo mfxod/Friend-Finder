@@ -41,9 +41,7 @@ module.exports = function (app) {
         // index of the smallest value in the diffsArr (the most compatible friend)
         const matchIndex = getDiffs().indexOf(Math.min(...getDiffs()));
         console.log(matchIndex);
-        
-        // how do I create a modal?
-        
-        // friends.push(req.body)
+                
+        friends.push(req.body);
     })
 };
