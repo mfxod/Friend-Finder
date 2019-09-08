@@ -8,6 +8,7 @@ module.exports = function (app) {
         return res.json(friends)
     });
 
+    // the res argument always has to be called - always need to send a response to a request
     app.post("/api/friends", function (req, res) {
         
         // ===== COMPATABILITY LOGIC =====
